@@ -7,14 +7,34 @@ function StaticRecentScan() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    Promise.all([
-      fetch('/mock-data/static-analysis-report.json').then(res => res.json()),
-      fetch('/mock-data/static-analysis-recent-overall.json').then(res => res.json())
-    ]).then(([pageData, globalData]) => {
-      setPageWiseData(pageData.files);
-      setOverallData(globalData);
-      setLoading(false);
-    });
+    const fetchRecentScanData = async () => {
+      try {
+        const response = await fetch('/api/lint-reports/recent-pagewise');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setPageWiseData(data.files);
+        // For overall data, we can derive it from pageWiseData or fetch separately if needed.
+        // For now, let's calculate a simple overall summary from the page-wise data.
+        const overallErrorCount = data.files.reduce((sum, file) => sum + file.errorCount, 0);
+        const overallWarningCount = data.files.reduce((sum, file) => sum + file.warningCount, 0);
+        setOverallData({
+          timestamp: data.timestamp,
+          errorCount: overallErrorCount,
+          warningCount: overallWarningCount,
+          messages: data.files.flatMap(file => file.messages.map(msg => ({ ...msg, filePath: file.filePath })))
+        });
+      } catch (error) {
+        console.error("Could not fetch recent scan data:", error);
+        setPageWiseData([]);
+        setOverallData(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchRecentScanData();
   }, []);
 
   if (loading) {
@@ -98,6 +118,3 @@ function StaticRecentScan() {
 }
 
 export default StaticRecentScan;
-
-
-

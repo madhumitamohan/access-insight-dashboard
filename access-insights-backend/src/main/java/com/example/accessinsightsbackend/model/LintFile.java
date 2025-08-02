@@ -1,14 +1,8 @@
 package com.example.accessinsightsbackend.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
 
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class LintFile {
 
     @Id
@@ -17,10 +11,52 @@ public class LintFile {
 
     private String filePath;
 
-    @Column(columnDefinition = "CLOB") // Use CLOB for large text/JSON
+    @Column(columnDefinition = "CLOB")
     private String fileReportJson;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "lint_report_id")
     private LintReport lintReport;
+
+    public LintFile() {
+    }
+
+    public LintFile(Long id, String filePath, String fileReportJson, LintReport lintReport) {
+        this.id = id;
+        this.filePath = filePath;
+        this.fileReportJson = fileReportJson;
+        this.lintReport = lintReport;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getFilePath() {
+        return filePath;
+    }
+
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
+
+    public String getFileReportJson() {
+        return fileReportJson;
+    }
+
+    public void setFileReportJson(String fileReportJson) {
+        this.fileReportJson = fileReportJson;
+    }
+
+    public LintReport getLintReport() {
+        return lintReport;
+    }
+
+    public void setLintReport(LintReport lintReport) {
+        this.lintReport = lintReport;
+    }
 }
