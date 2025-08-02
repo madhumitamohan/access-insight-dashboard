@@ -1,6 +1,9 @@
 
 pipeline {
     agent any
+    tools {
+        nodejs 'node24' // Ensure you have NodeJS configured in Jenkins
+    }
 
     stages {
         stage('Checkout') {
