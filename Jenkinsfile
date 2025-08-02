@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Get the code from your SCM (e.g., Git)
-                git branch: 'main', url: 'YOUR_REPOSITORY_URL' // Replace YOUR_REPOSITORY_URL and branch if needed
+                git branch: 'main', url: 'https://github.com/madhumitamohan/access-insight-dashboard.git' // Replace YOUR_REPOSITORY_URL and branch if needed
             }
         }
 
