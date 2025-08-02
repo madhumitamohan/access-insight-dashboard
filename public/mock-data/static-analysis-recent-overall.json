@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-08-02T00:00:00Z",
+  "messages": [
+    {
+      "filePath": "/Users/madhu/Documents/Software Development/Projects/access-insights-dashboard/src/App.js",
+      "ruleId": "jsx-a11y/alt-text",
+      "severity": 2,
+      "message": "img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.",
+      "line": 7,
+      "column": 9,
+      "nodeType": "JSXOpeningElement"
+    },
+    {
+      "filePath": "/Users/madhu/Documents/Software Development/Projects/access-insights-dashboard/src/App.js",
+      "ruleId": "jsx-a11y/alt-text",
+      "severity": 1,
+      "message": "img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.",
+      "line": 7,
+      "column": 9,
+      "nodeType": "JSXOpeningElement"
+    }
+  ],
+  "errorCount": 2,
+  "warningCount": 0,
+  "fixableErrorCount": 0,
+  "fixableWarningCount": 0,
+  "source": "..."
+}

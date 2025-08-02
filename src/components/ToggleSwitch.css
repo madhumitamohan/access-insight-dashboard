@@ -1,0 +1,35 @@
+.toggle-switch {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.toggle-option {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border: none;
+  outline: none;
+  transition: background-color 0.3s;
+  font-size: 16px;
+  color: #333;
+}
+
+.toggle-option:not(:last-child) {
+  border-right: 1px solid #ccc;
+}
+
+.toggle-option.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.toggle-option:hover:not(.active) {
+  background-color: #e0e0e0;
+}

@@ -1,0 +1,56 @@
+{
+  "historicalData":[
+    {
+      "timestamp": "2023-10-01T12:00:00Z",
+      "messages": [
+        {
+          "ruleId": "jsx-a11y/alt-text",
+          "severity": 2,
+          "message": "img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.",
+          "line": 7,
+          "column": 9,
+          "nodeType": "JSXOpeningElement"
+        },
+        {
+          "ruleId": "jsx-a11y/alt-text",
+          "severity": 1,
+          "message": "img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.",
+          "line": 7,
+          "column": 9,
+          "nodeType": "JSXOpeningElement"
+        }
+      ],
+      "errorCount": 4,
+      "warningCount": 0,
+      "fixableErrorCount": 0,
+      "fixableWarningCount": 0,
+      "source": "..."
+    },
+    {
+      "timestamp": "2022-10-01T12:00:00Z",
+      "messages": [
+        {
+          "ruleId": "jsx-a11y/alt-text",
+          "severity": 2,
+          "message": "img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.",
+          "line": 7,
+          "column": 9,
+          "nodeType": "JSXOpeningElement"
+        },
+        {
+          "ruleId": "jsx-a11y/alt-text",
+          "severity": 1,
+          "message": "img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.",
+          "line": 7,
+          "column": 9,
+          "nodeType": "JSXOpeningElement"
+        }
+      ],
+      "errorCount": 2,
+      "warningCount": 0,
+      "fixableErrorCount": 0,
+      "fixableWarningCount": 0,
+      "source": "..."
+    }
+    ] 
+  }
