@@ -1,15 +1,11 @@
-
 pipeline {
     agent any
-    tools {
-        nodejs 'node24' // Ensure you have NodeJS configured in Jenkins
-    }
 
     stages {
         stage('Checkout') {
             steps {
                 // Get the code from your SCM (e.g., Git)
-                git branch: 'main', url: 'https://github.com/madhumitamohan/access-insight-dashboard.git' // Replace YOUR_REPOSITORY_URL and branch if needed
+                git branch: 'main', url: 'YOUR_REPOSITORY_URL' // Replace YOUR_REPOSITORY_URL and branch if needed
             }
         }
 
@@ -22,7 +18,17 @@ pipeline {
         stage('Lint') {
             steps {
                 sh 'npm run lint:report'
-                // You might want to add a post-build action here to publish the lint report
+            }
+        }
+
+        stage('Publish Lint Report') {
+            steps {
+                sh '''
+                    curl -X POST \
+                    -H "Content-Type: application/json" \
+                    --data-binary @eslint-report.json \
+                    http://localhost:8081/api/lint-reports
+                '''
             }
         }
 
