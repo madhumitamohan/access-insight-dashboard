@@ -1,0 +1,28 @@
+.severity-label {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  min-width: 70px;
+  border: 1px solid transparent;
+}
+
+.severity-error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.severity-warning {
+  color: #664d03;
+  background-color: #fff3cd;
+  border-color: #ffecb5;
+}
+
+.severity-unknown {
+  color: #fff;
+  background-color: #6c757d; /* Gray */
+}

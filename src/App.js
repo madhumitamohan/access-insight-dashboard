@@ -6,6 +6,8 @@ import StaticHistoricalAnalysis from './components/StaticHistoricalAnalysis';
 import './components/StaticHistoricalAnalysis.css';
 import ToggleSwitch from './components/ToggleSwitch';
 import './components/ToggleSwitch.css';
+import JiraIntegration from './components/JiraIntegration';
+import './components/JiraIntegration.css';
 
 function App() {
   const [website, setWebsite] = useState('');
@@ -41,6 +43,7 @@ function App() {
         </>
       )}
       {/* Add other analysis components here later */}
+      <JiraIntegration />
     </div>
   );
 }
